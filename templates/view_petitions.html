@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+
+    <h1>View all petitions here!</h1>
+    {% for petition in db.read_table("petitions") %}
+        {% if petition[4] == location %}
+        <a href="/petition/{{petition[1]}}">
+            <div class="card">
+                    <h1>
+                        {{petition[2]}}
+                    </h1>
+            </div>
+        </a>
+
+        {% endif %}
+
+    {% endfor %}
+
+{% endblock %}

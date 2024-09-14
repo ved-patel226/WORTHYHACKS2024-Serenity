@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block above %}
+
+    <h1 data-aos="fade-up" data-aos-duration="1000">{{post[1]}}</h1>
+    {% if post[2] == '' %}
+        <h2 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">Body not available</h2>
+    {% else %}
+        <h2 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">{{post[2]}}</h2>
+    {% endif %}
+
+<script src="{{ url_for('static',filename='js/scroll-anim.js') }}"></script>
+
+{% endblock %}
+
+{% block content %}
+    <main>
+        <a data-aos="fade-right" data-aos-duration="1000"  style="max-width: 90%" class="link">
+            <div class="post">
+                <h3 style="width: 100%; text-align: center;">Solutions</h3>
+                <p style="width: 100%; text-align: center;">{{solutions}}</p>
+            </div>
+        </a>
+        
+
+    </main>
+    <div class="link">
+    {% for link in links %}
+        <a href="/posts/{{link[0]}}">{{link[1]}}</a>
+    {% endfor %}
+    </div>
+
+    <form action="/petition" method="post">
+        <input type="hidden" name="id" value="{{post[0]}}">
+        <button>Start Petition</button>
+    </form>
+
+
+{% endblock %}

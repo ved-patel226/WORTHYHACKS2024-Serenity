@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block above %}
+
+    <h1 data-aos="fade-up" data-aos-duration="1000">What's your city subreddit?</h1>
+    <form action="/search" method="post">
+        <input type="text" name="location" placeholder="Example: Edison, NJ">
+        <button>Search</button>
+    </form>
+{% endblock %}

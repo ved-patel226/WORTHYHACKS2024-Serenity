@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h1>
+        Title:
+        {{data[1]}}
+    </h1>
+
+    {% if data[2] != '' %}
+        <h2>
+            Description:
+            {{data[2]}}
+        </h2>
+    {% endif %}
+
+    <h2>
+        Subreddit:
+        {{data[4]}}
+    </h2>
+    
+    <form action="/petition/create" method="post">
+        <input type="hidden" name="id" value="{{data[0]}}">
+        <input type="hidden" name="title" value="{{data[1]}}">
+
+        {% if data[2] != '' %}
+            <input type="hidden" name="desc" value="{{data[2]}}">
+        {% endif %}
+        <input type="hidden" name="location" value="{{data[4]}}">
+        <button>Start Petition</button>
+    </form>
+{% endblock %}

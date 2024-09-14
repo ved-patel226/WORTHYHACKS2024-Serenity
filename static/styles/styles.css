@@ -1,0 +1,396 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #e6ecf0;
+    color: #14171a;
+    overflow-x: hidden;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(90deg, #386d8a, #2e709a);
+    color: #fff;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin: 0.5rem 0;
+    color: black;
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+    color: black;
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+}
+
+a {
+    color: #1da1f2;
+    text-decoration: none;
+}
+
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    padding: 20px 50px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: white;
+}
+
+.navbar-logo {
+    color: black;
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.navbar-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar-links li {
+    margin-left: 20px;
+}
+
+.navbar-links a {
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.navbar-links a:hover {
+    color: gray;
+}
+
+.navbar a {
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 10px 20px;
+    }
+
+    .navbar-links {
+        font-size: 16px;
+    }
+
+    .navbar-links li {
+        margin-left: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 10px 10px;
+    }
+
+    .navbar-logo {
+        font-size: 20px;
+    }
+
+    .navbar-links {
+        font-size: 14px;
+    }
+
+    .navbar-links li {
+        margin-left: 5px;
+    }
+}
+
+
+h1, h2{
+    text-align: center;
+    margin-top: 80px;
+    color: #1da1f2;
+}
+
+
+.link{
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #e1e8ed;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 800px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    text-decoration: none;
+}
+
+.link:hover {
+    transform: scale(1.03) !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.post h3 {
+    margin-top: 0;
+    color: #14171a;
+    width: 90%
+}
+
+.post p {
+    color: #657786;
+    width: 90%;
+}
+
+.gradient-background {
+    background: linear-gradient(90deg,#66caff,#1da1f2,#286c90,#014d76);
+    background-size: 180% 180%;
+    animation: gradient-animation 15s ease infinite;
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+button a {
+    text-decoration: none;
+    color: black;
+}
+
+button {
+    background-color: #1da1f2;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    transition: all 0.5s ease;
+}
+
+button:hover {
+    background-color: #0f75bc;
+    transform: translateY(-5px);
+}
+
+
+.like-button {
+    background: none !important;
+    border: none !important;
+    outline: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    position: absolute !important;
+    top: 10px !important;
+    right: 10px !important;
+}
+
+.like-button {
+    all: unset;
+    display: inline-block;
+    cursor: pointer;
+    background: none;
+    border: none;
+    outline: none;
+    display: inline-flex;
+    align-items: center;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: black;
+}
+
+.like-button:hover {
+    all: unset;
+    color: black;
+}
+
+.svg-container {
+    width: 60px;
+    height: 60px;
+}
+
+.like-svg {
+    width: 100%;
+    height: 100%;
+    transition: all 0.5s ease;
+}
+
+.white {
+    color: white;
+}
+
+.like-count {
+    position: absolute;
+    bottom: 12px;
+    left: 55%;
+    transform: translateX(-50%);
+    font-size: 15px;
+    fill: #1da1f2;
+    font-weight: bold;
+}
+
+#scroll-anim {
+    opacity: 0;
+}
+
+.analytics img{
+    display: block;
+    width: 50%;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card {
+    width: 40%;
+    max-height: 250px;
+    margin: 150px auto;
+    -webkit-backdrop-filter: blur(60px);
+    backdrop-filter: blur(60px);
+    background-image: linear-gradient(135deg, rgb(69, 180, 188), rgba(69, 180, 188, 0.9) 12%, rgba(69, 180, 188, 0.716) 50%, rgba(69, 180, 188, 0.58) 83%, rgba(69, 180, 188, 0.33));
+    border-radius: 40px;
+    padding: 60px 24px 60px 22px;
+    display: flex;
+    align-items: center;
+    box-shadow: inset 0 0 0 3px rgb(140, 209, 221);
+}
+
+.card .group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 20px;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+
+}
+
+.card img {
+    max-height: 300px;
+    max-width: 300px;
+}
+
+.card h2, h4{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    margin: 0;
+    color: white;
+    padding: 0;
+    text-align: left;
+}
+
+.card h2 {
+    font-weight: 800;
+}
+
+.card .group .text {
+    max-width: 400px;
+    margin: 0 auto;
+    background-image: linear-gradient(135deg, rgb(69, 180, 188), rgba(69, 180, 188, 0.9) 12%, rgba(69, 180, 188, 0.716) 50%, rgba(69, 180, 188, 0.58) 83%, rgba(69, 180, 188, 0.33));
+    -webkit-backdrop-filter: blur(60px);
+    backdrop-filter: blur(60px);
+    box-shadow: inset 0 0 0 3px rgb(140, 209, 221);
+    padding: 50px 20px;
+    border-radius: 40px;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.loading-circles {
+    width: 100px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    display: none;
+}
+
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9998;
+    display: none;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+.link {
+    color: purple;
+}
+
+
+div.bird {
+    position: absolute;
+    left: -5%;
+    width: 100px; 
+    transition: all 2s;
+    animation: fly 2s ease-in-out infinite;  
+    z-index: 99999;
+}
+
+@keyframes fly {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-50px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+::-webkit-scrollbar {
+    display: none;
+    background: transparent;  
+}

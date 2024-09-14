@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block above %}
+
+
+{% if data[4] == location %}
+    <h1 data-aos="fade-up" data-aos-duration="1000">Petition for:</h1>
+    <h2 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">{{data[2]}}</h2>
+{% else %}
+    <h1 data-aos="fade-up" data-aos-duration="1000">Petition is not relevant for you.</h1>
+    <h2 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">View relevant petition here</h2>
+{% endif %}
+
+{% endblock %}
+
+{% block content %}
+
+<form action="/petition/sign/{{data[1]}}" method="POST">
+    <div class="petition">
+        <h1>Promote Change!</h1>
+        <button type="submit">Sign Petition</button>
+    </div>
+</form>
+
+{% endblock %}

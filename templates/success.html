@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block above %}
+
+    <h1>Success!</h1>
+
+    <h2>
+        Your petition has been created.
+    </h2>
+
+    <h2>
+        You can view it <a href="/petition/{{data[0]}}">here</a>.
+    </h2>
+
+{% endblock %}

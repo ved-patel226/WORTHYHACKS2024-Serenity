@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serenity</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styles.css') }}">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+    <header class="hero">
+        {% block above %}{% endblock %}
+        <div class="bird" id="bird1"></div>
+        <div class="bird" id="bird2"></div>
+        <div class="bird" id="bird3"></div>
+        <div class="bird" id="bird4"></div>
+        <div class="bird" id="bird5"></div>
+        <div class="bird" id="bird6"></div>
+        <div id="scroll-anim"></div>
+    </header>
+    
+
+    <nav class="navbar">
+        <a href="/">
+            <div class="navbar-logo">Serenity</div>
+        </a>
+        <ul class="navbar-links">
+            <li><a class="load-show" href="/analytics">Analytics</a></li>
+            <li><a href="/petition">Petitions</a></li>
+            <li><a href="/login">Login</a></li>
+        </ul>
+        
+    </nav>  
+
+    {% block content %}{% endblock %}
+
+    <script src="{{ url_for('static',filename='js/bird-movement.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/bird-anim.js') }}"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.13/lottie.min.js"></script>
+    
+    <script>
+        AOS.init();
+    </script>
+
+       
+    
+    
+    
+
+</body>
+</html>
