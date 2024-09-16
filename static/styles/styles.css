@@ -153,10 +153,6 @@ h1, h2{
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.post {
-    width: 100%;
-}
-
 .post h3 {
     margin-top: 0;
     color: #14171a;
@@ -290,6 +286,7 @@ button:hover {
     margin: 200px auto;
     -webkit-backdrop-filter: blur(60px);
     backdrop-filter: blur(60px);
+    background-image: linear-gradient(135deg, rgb(69, 180, 188), rgba(69, 180, 188, 0.9) 12%, rgba(69, 180, 188, 0.716) 50%, rgba(69, 180, 188, 0.58) 83%, rgba(69, 180, 188, 0.33));
     border-radius: 40px;
     padding: 60px 24px 60px 22px;
     display: flex;

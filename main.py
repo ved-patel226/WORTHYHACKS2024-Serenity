@@ -10,12 +10,12 @@ from termcolor import cprint
 
 from py_tools import *
 
-db = DbActions("postgresql://serentiy2_user:Kr2Y2KBIRn2nOY9hBEHOLIOKo1atVpKO@dpg-crir5ulumphs73cpejc0-a.ohio-postgres.render.com/serentiy2")
+db = DbActions(env_to_var("DB_URL"))
 app = Flask(__name__)
-app.secret_key = 'supersecretkey'
+app.secret_key = env_to_var("APP_SECRET")
 
-github_blueprint = make_github_blueprint(client_id="Iv23liyUR1RAs5OzL2W6",
-                                         client_secret="6c44576b2a70ba031a343386bc75e7468d1abf2a")
+github_blueprint = make_github_blueprint(client_id=env_to_var("GITHUB_CLIENT_ID"),
+                                         client_secret=env_to_var("GITHUB_CLIENT_SECRET"))
 
 app.register_blueprint(github_blueprint, url_prefix="/login")
 
@@ -54,7 +54,7 @@ def login():
 def posts(id):
     posts = db.read("posts", "location", "EdisonNJ")
     
-    db.increment_post(id, debug=True)
+    db.increment_post(id)
     
     for post in posts:
         if post[0] == id:

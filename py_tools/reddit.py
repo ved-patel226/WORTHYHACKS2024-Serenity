@@ -6,6 +6,7 @@ from scipy.interpolate import make_interp_spline
 import numpy as np
 from .ai import *
 from .dbActions import *
+from .env_to_var import env_to_var
 from termcolor import cprint
 import time
 import os
@@ -17,9 +18,9 @@ class reddit:
         self.subreddit = subreddit
         
         self.reddit = praw.Reddit(
-            user_agent='myUserAgent',
-            client_id='uY9SojrM9LeYrQwg2fMAlQ',
-            client_secret="xJ3sthT-gvXApTuSyRxQK9accsdKNQ"
+            user_agent=env_to_var("REDDIT_USER_AGENT"),
+            client_id=env_to_var("REDDIT_CLIENT_ID"),
+            client_secret=env_to_var("REDDIT_CLIENT_SECRET"),
         )
 
         self.subreddit = self.reddit.subreddit(subreddit)
@@ -27,7 +28,7 @@ class reddit:
 
     def graph(self):
         
-        db = DbActions("postgresql://serentiy2_user:Kr2Y2KBIRn2nOY9hBEHOLIOKo1atVpKO@dpg-crir5ulumphs73cpejc0-a.ohio-postgres.render.com/serentiy2")
+        db = DbActions(env_to_var("DB_URL"))
         relevent = db.read("posts", "location", "EdisonNJ")
                 
         post_times = []
@@ -42,8 +43,8 @@ class reddit:
         
         
         df = pd.DataFrame(post_times, columns=['created_date'])
-        df['created_date'] = pd.to_datetime(df['created_date'], errors='coerce')  # Ensure 'created_date' is datetime
-        df.dropna(subset=['created_date'], inplace=True)  # Drop rows with NaT values
+        df['created_date'] = pd.to_datetime(df['created_date'], errors='coerce')
+        df.dropna(subset=['created_date'], inplace=True)
         df.set_index('created_date', inplace=True)
 
 
@@ -63,7 +64,7 @@ class reddit:
         dates_new = pd.date_range(start=dates.min(), end=dates.max(), periods=len(xnew))
 
         plt.figure(figsize=(12, 6))
-        plt.plot(daily_posts.index, daily_posts.values, 'o', color='b', label='Daily Posts')  # Plot raw data points
+        plt.plot(daily_posts.index, daily_posts.values, 'o', color='b', label='Daily Posts')
         plt.plot(dates_new, ynew, color='r', linewidth=2, label='Smoothed Curve')
 
         plt.title('Number of Posts Created per Day')
@@ -89,7 +90,7 @@ class reddit:
         
         relevent_posts = []
         
-        db = DbActions("postgresql://serentiy2_user:Kr2Y2KBIRn2nOY9hBEHOLIOKo1atVpKO@dpg-crir5ulumphs73cpejc0-a.ohio-postgres.render.com/serentiy2")
+        db = DbActions(env_to_var("DB_URL"))
 
         
         for post in tqdm(posts):

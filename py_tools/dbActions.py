@@ -1,5 +1,6 @@
 from sqlalchemy import create_engine, Column, Integer, String, Sequence, MetaData, text
 from sqlalchemy.orm import sessionmaker, declarative_base
+from .env_to_var import env_to_var
 
 Base = declarative_base()
 
@@ -142,7 +143,7 @@ class DbActions:
             connection.execute(text(command))
     
 if __name__ == "__main__":
-    db = DbActions("postgresql://serentiy2_user:Kr2Y2KBIRn2nOY9hBEHOLIOKo1atVpKO@dpg-crir5ulumphs73cpejc0-a.ohio-postgres.render.com/serentiy2")
+    db = DbActions(env_to_var("DB_URL"))
     
     db.view_post(debug=True)
     

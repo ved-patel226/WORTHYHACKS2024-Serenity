@@ -45,8 +45,3 @@ def generate(ppl: list, ttl: str) -> str:
     
     return pdf_file
 
-def main() -> None:
-    ...
-
-if __name__ == '__main__':
-    main()
