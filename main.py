@@ -3,15 +3,12 @@ os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
 
 from flask import render_template, Flask, redirect, url_for, request, send_file
 from flask_dance.contrib.github import make_github_blueprint, github
-from dbActions import DbActions
 import random
-from reddit import reddit
-from ai import *
 import time
 from datetime import datetime
-from pdf import generate
 from termcolor import cprint
 
+from py_tools import *
 
 db = DbActions("postgresql://serentiy2_user:Kr2Y2KBIRn2nOY9hBEHOLIOKo1atVpKO@dpg-crir5ulumphs73cpejc0-a.ohio-postgres.render.com/serentiy2")
 app = Flask(__name__)
@@ -185,8 +182,18 @@ def sign_petition(id):
     check = True
     if check:
         for row in db.read("signatures", "petition_id", data[1]):
-            if row[2] == username:  
-                return render_template("error.html", error="You have already signed this petition")
+            if row[2] == username:
+                
+                signatures = []
+                for row in db.read_table("signatures"):
+                    if row[1] == data[1]:
+                        signatures.append(row[2])
+                
+                signatures = [signatures[i:i+2] for i in range(0, len(signatures), 2)]
+
+                path = generate(signatures, data[2])
+                
+                return render_template("pdf.html", db=db, signatures=signatures, path=path)
         
     db.append([data[1], username])
     

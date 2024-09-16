@@ -290,7 +290,6 @@ button:hover {
     margin: 200px auto;
     -webkit-backdrop-filter: blur(60px);
     backdrop-filter: blur(60px);
-    background-image: linear-gradient(135deg, rgb(69, 180, 188), rgba(69, 180, 188, 0.9) 12%, rgba(69, 180, 188, 0.716) 50%, rgba(69, 180, 188, 0.58) 83%, rgba(69, 180, 188, 0.33));
     border-radius: 40px;
     padding: 60px 24px 60px 22px;
     display: flex;

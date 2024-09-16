@@ -1,22 +1,26 @@
 {% extends "base.html" %}
 
+{% block above %}
 
+    <h1>
+        Petitions in {{location}}
+    </h1>
+
+{% endblock %}
 
 {% block content %}
 
-    <h1>View all petitions here!</h1>
-    {% for petition in db.read_table("petitions") %}
-        {% if petition[4] == location %}
-        <a href="/petition/{{petition[1]}}">
-            <div class="card">
-                    <h1>
-                        {{petition[2]}}
-                    </h1>
-            </div>
-        </a>
+    <main>
+        {% for petition in db.read_table("petitions") %}
+            {% if petition[4] == location %}
+                <a data-aos="fade-right" data-aos-duration="1000"  style="max-width: 90%" class="link">
+                    <div class="post">
+                        <h1 style="text-decoration:underline; width: 100%; text-align: center; cursor: pointer; margin:50px;" onclick="window.location.href='/petition/{{petition[1]}}';">{{petition[2]}}</h1>
+                    </div>
+                </a>
 
-        {% endif %}
+            {% endif %}
 
-    {% endfor %}
-
+        {% endfor %}
+    </main>
 {% endblock %}
