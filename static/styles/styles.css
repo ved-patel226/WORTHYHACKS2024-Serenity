@@ -153,6 +153,10 @@ h1, h2{
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+.post {
+    width: 100%;
+}
+
 .post h3 {
     margin-top: 0;
     color: #14171a;
@@ -282,8 +286,8 @@ button:hover {
 
 .card {
     width: 40%;
-    max-height: 250px;
-    margin: 150px auto;
+    max-height: 450px;
+    margin: 200px auto;
     -webkit-backdrop-filter: blur(60px);
     backdrop-filter: blur(60px);
     background-image: linear-gradient(135deg, rgb(69, 180, 188), rgba(69, 180, 188, 0.9) 12%, rgba(69, 180, 188, 0.716) 50%, rgba(69, 180, 188, 0.58) 83%, rgba(69, 180, 188, 0.33));
@@ -394,3 +398,26 @@ div.bird {
     display: none;
     background: transparent;  
 }
+
+input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 5px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 15px;
+}
+
+input:focus{
+    border: 5px solid #1da1f2;
+    outline: none;
+}
+
+.card-container {
+    background: linear-gradient(to bottom, #e6ecf0, #69b2d8 10%, #69b2d8 90%, #e6ecf0);
+    box-sizing: border-box;
+    padding: 1vh;
+}
+
+

@@ -14,7 +14,7 @@ def generate(ppl: list, ttl: str) -> str:
     title_style = styles["Title"]
     normal_style = styles["BodyText"]
 
-    title = Paragraph("Petition Title", title_style)
+    title = Paragraph(f"{ttl}", title_style)
 
     content = """
     We, the undersigned, are concerned citizens who urge our leaders to act now to address the issue at hand. 
@@ -38,7 +38,7 @@ def generate(ppl: list, ttl: str) -> str:
         ('GRID', (0, 1), (-1, -1), 1, colors.black),
     ]))
 
-    watermark = Paragraph("Made by Serenity", normal_style)
+    watermark = Paragraph("Made with Serenity", normal_style)
     
     elements = [title, spacer, petition_text, Spacer(1, 24), table, watermark]
     doc.build(elements)

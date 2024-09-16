@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block content %}
+{% block above %}
 
     <h1>
         Title:
@@ -16,7 +16,7 @@
 
     <h2>
         Subreddit:
-        {{data[4]}}
+        {{data[5]}}
     </h2>
     
     <form action="/petition/create" method="post">
@@ -26,7 +26,7 @@
         {% if data[2] != '' %}
             <input type="hidden" name="desc" value="{{data[2]}}">
         {% endif %}
-        <input type="hidden" name="location" value="{{data[4]}}">
+        <input type="hidden" name="location" value="{{data[5]}}">
         <button>Start Petition</button>
     </form>
 {% endblock %}

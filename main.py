@@ -13,7 +13,7 @@ from pdf import generate
 from termcolor import cprint
 
 
-db = DbActions("postgresql://serentiy_user:MhsQ3vQR5ZVQ746kYjDnVtCExkaRXimA@dpg-cqt2pq3qf0us7396dep0-a.ohio-postgres.render.com/serentiy")
+db = DbActions("postgresql://serentiy2_user:Kr2Y2KBIRn2nOY9hBEHOLIOKo1atVpKO@dpg-crir5ulumphs73cpejc0-a.ohio-postgres.render.com/serentiy2")
 app = Flask(__name__)
 app.secret_key = 'supersecretkey'
 
@@ -38,8 +38,15 @@ def home():
         account_info = github.get("/user")
         username = account_info.json()["login"]
         if account_info.ok:
-            return render_template("index.html", random=random, db=db, username=account_info.json()["login"])
+            
+            try:
+                if len(db.read("posts", "location", db.read("app_user", "username", account_info.json()["login"])[0][2])) == 0:
+                    return render_template("location.html")
+            except:
+                return render_template("location.html")
 
+            
+            return render_template("index.html", random=random, db=db, username=account_info.json()["login"])
     return "request failed"
 
 @app.route("/login")
@@ -48,8 +55,10 @@ def login():
 
 @app.route("/posts/<int:id>")
 def posts(id):
-    
     posts = db.read("posts", "location", "EdisonNJ")
+    
+    db.increment_post(id, debug=True)
+    
     for post in posts:
         if post[0] == id:
             
@@ -85,24 +94,36 @@ def posts(id):
 
 @app.route("/search", methods=["POST"])
 def search():
-    
     data = request.form['location']
 
+    global reddits
+    
+    reddits = reddit(data)
+    
     account_info = github.get("/user")
     username = account_info.json()["login"]
-    db.append([username, data])
+
     
+    if len(db.read("app_user", "location", data)) == 0:
+        db.append([username, data])
+        
+        reddits.filter()
+
     return redirect(url_for("home"))
 
 @app.route("/analytics")
 def analytics():
     
-    reddits = reddit("EdisonNJ")
+    try:
+        reddits.graph()
+    except:
+        reddits = reddit(db.read("app_user", "username", username)[0][2])
+        reddits.graph()
     
-    reddits.graph()
+    
     file = reddits.find_newest_file("static/graphs/")
     
-    return render_template("analytics.html", file=file, db=db)
+    return render_template("analytics.html", file=file, db=db, topics=db.view_post())
 
 @app.route("/petition", methods=["POST", "GET"])
 def petition():
@@ -183,7 +204,7 @@ def sign_petition(id):
 @app.route("/download", methods=["POST"])
 def download():
     
-    cprint(request.form["path"], "red")
+    #cprint(f"DOWNLOAD PATH: {request.form["path"]}", "red")
     
     return send_file(request.form["path"], as_attachment=True)
 

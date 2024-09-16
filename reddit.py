@@ -9,6 +9,7 @@ from dbActions import DbActions
 from termcolor import cprint
 import time
 import os
+from tqdm import tqdm
 
 class reddit:  
     def __init__(self, subreddit:str):
@@ -26,8 +27,7 @@ class reddit:
 
     def graph(self):
         
-        
-        db = DbActions("postgresql://serentiy_user:MhsQ3vQR5ZVQ746kYjDnVtCExkaRXimA@dpg-cqt2pq3qf0us7396dep0-a.ohio-postgres.render.com/serentiy")
+        db = DbActions("postgresql://serentiy2_user:Kr2Y2KBIRn2nOY9hBEHOLIOKo1atVpKO@dpg-crir5ulumphs73cpejc0-a.ohio-postgres.render.com/serentiy2")
         relevent = db.read("posts", "location", "EdisonNJ")
                 
         post_times = []
@@ -89,10 +89,10 @@ class reddit:
         
         relevent_posts = []
         
-        db = DbActions("postgresql://serentiy_user:MhsQ3vQR5ZVQ746kYjDnVtCExkaRXimA@dpg-cqt2pq3qf0us7396dep0-a.ohio-postgres.render.com/serentiy")
+        db = DbActions("postgresql://serentiy2_user:Kr2Y2KBIRn2nOY9hBEHOLIOKo1atVpKO@dpg-crir5ulumphs73cpejc0-a.ohio-postgres.render.com/serentiy2")
 
         
-        for post in posts:
+        for post in tqdm(posts):
             prompt = f"""If the following post is representing a problem in their community
             in any way, please type 'yes'.
             Otherwise, type 'no'
@@ -109,11 +109,10 @@ class reddit:
                 continue
 
             if response.strip().lower() == "yes":
-                db.append([post[0], post[1], post[2], str(self.subreddit)])
-                print(f"Response is yes {response}")
+                db.append([post[0], post[1], post[2], 0, str(self.subreddit)])
             else:
-                print(f"Response is no {response}")
-                
+                continue
+            
     def find_newest_file(self, PATH):
         
         directory_path = 'static/graphs/'

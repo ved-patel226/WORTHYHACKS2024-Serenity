@@ -1,9 +1,13 @@
 {% extends "base.html" %}
 {% block above %}
-
+    <svg class="loading-circles" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><circle fill="#55A5D1" stroke="#55A5D1" stroke-width="22" r="15" cx="40" cy="65"><animate attributeName="cy" calcMode="spline" dur="2" values="65;135;65;" keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="-.4"></animate></circle><circle fill="#55A5D1" stroke="#55A5D1" stroke-width="22" r="15" cx="100" cy="65"><animate attributeName="cy" calcMode="spline" dur="2" values="65;135;65;" keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="-.2"></animate></circle><circle fill="#55A5D1" stroke="#55A5D1" stroke-width="22" r="15" cx="160" cy="65"><animate attributeName="cy" calcMode="spline" dur="2" values="65;135;65;" keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="0"></animate></circle></svg>
     <h1 data-aos="fade-up" data-aos-duration="1000">What's your city subreddit?</h1>
     <form action="/search" method="post">
         <input type="text" name="location" placeholder="Example: Edison, NJ">
-        <button>Search</button>
+        <button class="load-show">Search</button>
     </form>
+
+    <script src="{{ url_for('static',filename='js/load.js') }}"></script>
+
+
 {% endblock %}

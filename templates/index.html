@@ -14,7 +14,6 @@
     {% if username %}
         <main>
             <svg class="loading-circles" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><circle fill="#55A5D1" stroke="#55A5D1" stroke-width="22" r="15" cx="40" cy="65"><animate attributeName="cy" calcMode="spline" dur="2" values="65;135;65;" keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="-.4"></animate></circle><circle fill="#55A5D1" stroke="#55A5D1" stroke-width="22" r="15" cx="100" cy="65"><animate attributeName="cy" calcMode="spline" dur="2" values="65;135;65;" keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="-.2"></animate></circle><circle fill="#55A5D1" stroke="#55A5D1" stroke-width="22" r="15" cx="160" cy="65"><animate attributeName="cy" calcMode="spline" dur="2" values="65;135;65;" keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="0"></animate></circle></svg>
-            <div class="loading-overlay"></div>
             {% for post in db.read("posts", "location", db.read("app_user", "username", username)[0][2])%}
             <a class='link load-show' data-aos="{{random.choice(['fade-left', 'fade-right'])}}" data-aos-duration="1000" href="/posts/{{post[0]}}">
                     <div class="post">
@@ -38,6 +37,7 @@
             {% endfor %}
         </main>
     {% else %}
+
         <div class="card">
             <div class="group">
                 <img class="img-left" src="{{ url_for('static',filename='imgs/problem.png') }}">
@@ -47,6 +47,7 @@
                 </div>
             </div>
         </div>
+    <div class="card-container">
         <div class="card">
             <div class="group">
                 <div class="text">
@@ -56,20 +57,20 @@
                 <img src="{{ url_for('static',filename='imgs/petitions.png') }}">
             </div>
         </div>
-        <div class="card">
-            <div class="group">
-                <img src="{{ url_for('static',filename='imgs/local.png') }}">
-                <div class="text">
-                    <h2 class="right-text">Local problems, Local solutions</h2>
-                    <h4>Connect with your neighbors and local government to create change</h4>
-                </div>
-
+    </div>
+    
+    <div class="card">
+        <div class="group">
+            <img src="{{ url_for('static',filename='imgs/local.png') }}">
+            <div class="text">
+                <h2 class="right-text">Local problems, Local solutions</h2>
+                <h4>Connect with your neighbors and local government to create change</h4>
             </div>
         </div>
+    </div>
 
 
     {% endif %}
-    <script src="{{ url_for('static',filename='js/scroll-anim.js') }}"></script>
     <script src="{{ url_for('static',filename='js/load.js') }}"></script>
     
     {% endblock %}

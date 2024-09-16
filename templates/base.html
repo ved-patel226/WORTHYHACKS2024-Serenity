@@ -32,9 +32,11 @@
         </ul>
         
     </nav>  
-
+    
+    <div class="loading-overlay"></div>
     {% block content %}{% endblock %}
 
+    <script src="{{ url_for('static',filename='js/scroll-anim.js') }}"></script>
     <script src="{{ url_for('static',filename='js/bird-movement.js') }}"></script>
     <script src="{{ url_for('static',filename='js/bird-anim.js') }}"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
