@@ -5,22 +5,11 @@
     <h1 align="center">WORTHYHACKS2024-SERENITY</h1>
 </p>
 <p align="center">
-    <em><code>❯ REPLACE-ME</code></em>
-</p>
-<p align="center">
 	<img src="https://img.shields.io/github/license/ved-patel226/WORTHYHACKS2024-Serenity?style=flat&logo=opensourceinitiative&logoColor=white&color=56b7f1" alt="license">
 	<img src="https://img.shields.io/github/last-commit/ved-patel226/WORTHYHACKS2024-Serenity?style=flat&logo=git&logoColor=white&color=56b7f1" alt="last-commit">
 	<img src="https://img.shields.io/github/languages/top/ved-patel226/WORTHYHACKS2024-Serenity?style=flat&color=56b7f1" alt="repo-top-language">
 	<img src="https://img.shields.io/github/languages/count/ved-patel226/WORTHYHACKS2024-Serenity?style=flat&color=56b7f1" alt="repo-language-count">
 </p>
-<p align="center">
-		<em>Built with the tools and technologies:</em>
-</p>
-<p align="center">
-	<img src="https://img.shields.io/badge/HTML5-E34F26.svg?style=flat&logo=HTML5&logoColor=white" alt="HTML5">
-	<img src="https://img.shields.io/badge/Python-3776AB.svg?style=flat&logo=Python&logoColor=white" alt="Python">
-</p>
-
 <br>
 
 #####  Table of Contents
@@ -88,7 +77,7 @@
 
 | File | Summary |
 | --- | --- |
-| [main.py](https://github.com/ved-patel226/WORTHYHACKS2024-Serenity/blob/main/main.py) | <code>❯ REPLACE-ME</code> |
+| [main.py](https://github.com/ved-patel226/WORTHYHACKS2024-Serenity/blob/main/main.py) | <code>❯ FLASK APP</code> |
 
 </details>
 
@@ -96,18 +85,18 @@
 
 | File | Summary |
 | --- | --- |
-| [login.html](https://github.com/ved-patel226/WORTHYHACKS2024-Serenity/blob/main/templates/login.html) | <code>❯ REPLACE-ME</code> |
-| [success.html](https://github.com/ved-patel226/WORTHYHACKS2024-Serenity/blob/main/templates/success.html) | <code>❯ REPLACE-ME</code> |
-| [pdf.html](https://github.com/ved-patel226/WORTHYHACKS2024-Serenity/blob/main/templates/pdf.html) | <code>❯ REPLACE-ME</code> |
-| [base.html](https://github.com/ved-patel226/WORTHYHACKS2024-Serenity/blob/main/templates/base.html) | <code>❯ REPLACE-ME</code> |
-| [petition.html](https://github.com/ved-patel226/WORTHYHACKS2024-Serenity/blob/main/templates/petition.html) | <code>❯ REPLACE-ME</code> |
-| [view_petition.html](https://github.com/ved-patel226/WORTHYHACKS2024-Serenity/blob/main/templates/view_petition.html) | <code>❯ REPLACE-ME</code> |
-| [post.html](https://github.com/ved-patel226/WORTHYHACKS2024-Serenity/blob/main/templates/post.html) | <code>❯ REPLACE-ME</code> |
-| [index.html](https://github.com/ved-patel226/WORTHYHACKS2024-Serenity/blob/main/templates/index.html) | <code>❯ REPLACE-ME</code> |
-| [location.html](https://github.com/ved-patel226/WORTHYHACKS2024-Serenity/blob/main/templates/location.html) | <code>❯ REPLACE-ME</code> |
-| [error.html](https://github.com/ved-patel226/WORTHYHACKS2024-Serenity/blob/main/templates/error.html) | <code>❯ REPLACE-ME</code> |
-| [view_petitions.html](https://github.com/ved-patel226/WORTHYHACKS2024-Serenity/blob/main/templates/view_petitions.html) | <code>❯ REPLACE-ME</code> |
-| [analytics.html](https://github.com/ved-patel226/WORTHYHACKS2024-Serenity/blob/main/templates/analytics.html) | <code>❯ REPLACE-ME</code> |
+| [login.html](https://github.com/ved-patel226/WORTHYHACKS2024-Serenity/blob/main/templates/login.html) | <code>❯ LOGIN HTML PAGE</code> |
+| [success.html](https://github.com/ved-patel226/WORTHYHACKS2024-Serenity/blob/main/templates/success.html) | <code>❯ SUCCESS PAGE FOR PETITIONS</code> |
+| [pdf.html](https://github.com/ved-patel226/WORTHYHACKS2024-Serenity/blob/main/templates/pdf.html) | <code>❯ PDF DOWNLOAD PAGE</code> |
+| [base.html](https://github.com/ved-patel226/WORTHYHACKS2024-Serenity/blob/main/templates/base.html) | <code>❯ BASE HTML FILE</code> |
+| [petition.html](https://github.com/ved-patel226/WORTHYHACKS2024-Serenity/blob/main/templates/petition.html) | <code>❯ START PETITION PAGE</code> |
+| [view_petition.html](https://github.com/ved-patel226/WORTHYHACKS2024-Serenity/blob/main/templates/view_petition.html) | <code>❯ VIEW PETITION PAGE</code> |
+| [post.html](https://github.com/ved-patel226/WORTHYHACKS2024-Serenity/blob/main/templates/post.html) | <code>❯ EXPANDED VIEW OF POSTS</code> |
+| [index.html](https://github.com/ved-patel226/WORTHYHACKS2024-Serenity/blob/main/templates/index.html) | <code>❯ LANDING PAGE</code> |
+| [location.html](https://github.com/ved-patel226/WORTHYHACKS2024-Serenity/blob/main/templates/location.html) | <code>❯ CHANGE YOUR CITIES SUBREDDIT</code> |
+| [error.html](https://github.com/ved-patel226/WORTHYHACKS2024-Serenity/blob/main/templates/error.html) | <code>❯ ERROR PAGE</code> |
+| [view_petitions.html](https://github.com/ved-patel226/WORTHYHACKS2024-Serenity/blob/main/templates/view_petitions.html) | <code>❯ VIEW ALL PETITIONS</code> |
+| [analytics.html](https://github.com/ved-patel226/WORTHYHACKS2024-Serenity/blob/main/templates/analytics.html) | <code>❯ BASIC ANALYTICS</code> |
 
 </details>
 
@@ -115,11 +104,11 @@
 
 | File | Summary |
 | --- | --- |
-| [env_to_var.py](https://github.com/ved-patel226/WORTHYHACKS2024-Serenity/blob/main/py_tools/env_to_var.py) | <code>❯ REPLACE-ME</code> |
-| [reddit.py](https://github.com/ved-patel226/WORTHYHACKS2024-Serenity/blob/main/py_tools/reddit.py) | <code>❯ REPLACE-ME</code> |
-| [ai.py](https://github.com/ved-patel226/WORTHYHACKS2024-Serenity/blob/main/py_tools/ai.py) | <code>❯ REPLACE-ME</code> |
-| [pdf.py](https://github.com/ved-patel226/WORTHYHACKS2024-Serenity/blob/main/py_tools/pdf.py) | <code>❯ REPLACE-ME</code> |
-| [dbActions.py](https://github.com/ved-patel226/WORTHYHACKS2024-Serenity/blob/main/py_tools/dbActions.py) | <code>❯ REPLACE-ME</code> |
+| [env_to_var.py](https://github.com/ved-patel226/WORTHYHACKS2024-Serenity/blob/main/py_tools/env_to_var.py) | <code>❯ CONVERTS .ENV FILE DATA TO VARIABLES</code> |
+| [reddit.py](https://github.com/ved-patel226/WORTHYHACKS2024-Serenity/blob/main/py_tools/reddit.py) | <code>❯ SCRAPES VARIOUS DATA FROM REDDIT</code> |
+| [ai.py](https://github.com/ved-patel226/WORTHYHACKS2024-Serenity/blob/main/py_tools/ai.py) | <code>❯ COMMUNICATES WITH GROQ API</code> |
+| [pdf.py](https://github.com/ved-patel226/WORTHYHACKS2024-Serenity/blob/main/py_tools/pdf.py) | <code>❯ PDF MAKER</code> |
+| [dbActions.py](https://github.com/ved-patel226/WORTHYHACKS2024-Serenity/blob/main/py_tools/dbActions.py) | <code>❯ MAKES COMMUNICATING WITH DB EASIER</code> |
 
 </details>
 
