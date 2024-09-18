@@ -14,12 +14,18 @@
     <img src="{{file}}">
 </div>
 
-<div class="analytics">
-    <h2>Trending Topics</h2>
-    {% for topic in topics %}
-        <p>{{topic}}</p>
-    {% endfor %}
-</div>
+<main>
+    <a data-aos="fade-right" data-aos-duration="1000"  style="max-width: 90%" class="link">
+        <div class="post">
+            <h1 style="margin:0;">Trending Topics</h1>
+            {% for topic in topics %}
+                <p style="text-decoration:underline; width: 100%; text-align: center; cursor: pointer;" onclick="window.location.href='/posts/{{topic[0]}}';">{{topic[1]}}</p>
+            {% endfor %}
+        </div>
+    </a>
+</main>
+
+
 
 
 {% endblock %}

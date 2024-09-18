@@ -141,10 +141,12 @@ class DbActions:
     def cmd(self, command: str) -> None:
         with self.engine.connect() as connection:
             connection.execute(text(command))
-    
-if __name__ == "__main__":
+
+def main() -> None:
     db = DbActions(env_to_var("DB_URL"))
     
-    db.view_post(debug=True)
-    
-    #db.read_table("posts", debug=True)
+    db.wipe()
+
+if __name__ == '__main__':
+    main()
+
